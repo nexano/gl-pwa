@@ -337,6 +337,160 @@ const FOODS = [
   ["Куриные наггетсы", "Chicken nuggets", 46, 16, "protein"],
   ["Сосиски", "Sausages", 28, 8, "protein"],
   ["Колбаса варёная", "Cooked sausage", 28, 2, "protein"],
+
+  // === ХЛЕБ (дополнение) ===
+  ["Хлеб бородинский", "Borodinsky bread", 45, 40, "bread"],
+  ["Хлеб дарницкий", "Darnitsky bread", 51, 42, "bread"],
+  ["Хлеб льняной", "Linseed bread", 45, 38, "bread"],
+  ["Хлеб с семечками", "Seeded bread", 48, 40, "bread"],
+  ["Хлеб кукурузный", "Corn bread", 69, 47, "bread"],
+  ["Хлеб гречневый", "Buckwheat bread", 50, 42, "bread"],
+  ["Хлебцы пшеничные", "Wheat crispbread", 70, 72, "bread"],
+  ["Пита цельнозерновая", "Wholemeal pitta", 56, 50, "bread"],
+  ["Английский маффин", "English muffin", 77, 47, "bread"],
+  ["Хлеб с изюмом", "Raisin bread", 63, 52, "bread"],
+
+  // === КРУПЫ (дополнение) ===
+  ["Полба / спельта (варёная)", "Spelt, boiled", 45, 27, "cereals"],
+  ["Амарант (варёный)", "Amaranth, boiled", 35, 23, "cereals"],
+  ["Пшеница (варёная)", "Wheat, boiled", 45, 25, "cereals"],
+  ["Кукурузные палочки", "Corn puffs", 85, 80, "cereals"],
+  ["Геркулес быстрого приготовления", "Instant oats", 65, 60, "cereals"],
+
+  // === РИС (дополнение) ===
+  ["Рис дикий (варёный)", "Wild rice, boiled", 57, 21, "rice"],
+  ["Рис красный (варёный)", "Red rice, boiled", 55, 22, "rice"],
+
+  // === КАРТОФЕЛЬ (дополнение) ===
+  ["Картофель в мундире (варёный)", "Boiled potatoes in skin", 65, 16, "potatoes"],
+  ["Картофельные вафли / дольки", "Potato wedges", 75, 28, "potatoes"],
+  ["Топинамбур (варёный)", "Jerusalem artichoke, boiled", 50, 14, "potatoes"],
+
+  // === ФРУКТЫ (дополнение) ===
+  ["Мандарин", "Mandarin / tangerine", 42, 11, "fruits"],
+  ["Лимон", "Lemon", 20, 9, "fruits"],
+  ["Лайм", "Lime", 20, 8, "fruits"],
+  ["Нектарин", "Nectarine", 35, 10, "fruits"],
+  ["Черешня", "Sweet cherry", 22, 12, "fruits"],
+  ["Чёрная смородина", "Blackcurrant", 25, 8, "fruits"],
+  ["Красная смородина", "Redcurrant", 25, 7, "fruits"],
+  ["Крыжовник", "Gooseberry", 25, 9, "fruits"],
+  ["Ежевика", "Blackberry", 25, 5, "fruits"],
+  ["Черника", "Bilberry / blueberry", 42, 10, "fruits"],
+  ["Брусника", "Lingonberry", 25, 8, "fruits"],
+  ["Клюква", "Cranberry", 45, 8, "fruits"],
+  ["Авокадо", "Avocado", 10, 2, "fruits"],
+  ["Кокос (мякоть)", "Coconut, flesh", 45, 6, "fruits"],
+  ["Кокосовая стружка", "Desiccated coconut", 45, 6, "fruits"],
+  ["Личи (свежие)", "Lychee, fresh", 50, 17, "fruits"],
+  ["Тёрн / алыча", "Sloe / cherry plum", 22, 7, "fruits"],
+  ["Сок вишнёвый", "Cherry juice", 47, 11, "fruits"],
+  ["Морс клюквенный", "Cranberry juice drink", 50, 11, "fruits"],
+
+  // === ОВОЩИ (дополнение) ===
+  ["Фасоль стручковая (варёная)", "Green beans, boiled", 15, 4, "vegetables"],
+  ["Горошек стручковый", "Sugar snap peas", 15, 5, "vegetables"],
+  ["Редис", "Radish", 15, 2, "vegetables"],
+  ["Репа (варёная)", "Turnip, boiled", 62, 5, "vegetables"],
+  ["Сельдерей (стебель)", "Celery stalk", 15, 2, "vegetables"],
+  ["Чеснок", "Garlic", 30, 33, "vegetables"],
+  ["Тыква (сырая)", "Pumpkin, raw", 75, 5, "vegetables"],
+  ["Кукуруза (сырая)", "Sweetcorn, raw", 60, 19, "vegetables"],
+  ["Горох (сырой)", "Peas, raw", 48, 14, "vegetables"],
+  ["Артишок", "Artichoke", 15, 3, "vegetables"],
+  ["Спаржа", "Asparagus", 15, 2, "vegetables"],
+  ["Порей (лук-порей)", "Leek", 15, 6, "vegetables"],
+  ["Свёкла (сырая)", "Beetroot, raw", 35, 8, "vegetables"],
+
+  // === МОЛОЧНЫЕ (дополнение) ===
+  ["Ряженка", "Ryazhenka (baked milk)", 25, 4, "dairy"],
+  ["Простокваша", "Clabbered milk", 25, 4, "dairy"],
+  ["Сметана (20%)", "Sour cream, 20%", 20, 3, "dairy"],
+  ["Сметана (10%)", "Sour cream, 10%", 20, 4, "dairy"],
+  ["Творог 0%", "Cottage cheese, 0% fat", 10, 4, "dairy"],
+  ["Творог 5%", "Cottage cheese, 5% fat", 10, 3, "dairy"],
+  ["Сырок творожный глазированный", "Glazed cottage cheese bar", 70, 28, "dairy"],
+  ["Варенец", "Varenets (baked milk)", 25, 4, "dairy"],
+  ["Снежок (напиток)", "Snezhok (sweetened kefir)", 35, 8, "dairy"],
+  ["Молоко топлёное", "Baked milk", 27, 5, "dairy"],
+  ["Пломбир", "Plombir ice cream", 52, 20, "dairy"],
+  ["Глазированное мороженое", "Glazed ice cream bar", 55, 28, "dairy"],
+  ["Шоколадное молоко", "Chocolate milk", 34, 11, "dairy"],
+  ["Питьевой йогурт", "Drinkable yoghurt", 45, 9, "dairy"],
+
+  // === ОРЕХИ (дополнение) ===
+  ["Кедровые орехи", "Pine nuts", 15, 4, "nuts"],
+  ["Паста арахисовая", "Peanut butter", 14, 20, "nuts"],
+  ["Кокосовое молоко", "Coconut milk", 40, 3, "nuts"],
+  ["Паста миндальная", "Almond butter", 15, 12, "nuts"],
+  ["Тахини (кунжутная паста)", "Tahini", 35, 17, "nuts"],
+
+  // === СЛАДОСТИ (дополнение) ===
+  ["Пряник", "Gingerbread", 65, 71, "sweets"],
+  ["Козинак (подсолнечный)", "Sunflower seed brittle", 55, 55, "sweets"],
+  ["Рахат-лукум", "Turkish delight", 65, 76, "sweets"],
+  ["Пастила яблочная", "Apple pastille", 65, 78, "sweets"],
+  ["Ирис / тянучка", "Toffee candy", 65, 75, "sweets"],
+  ["Сахарные вафли", "Wafer rolls", 76, 68, "sweets"],
+  ["Шоколадная конфета", "Chocolate candy", 45, 62, "sweets"],
+  ["Помадка", "Fondant candy", 70, 80, "sweets"],
+  ["Чурчхела", "Churchkhela", 55, 58, "sweets"],
+  ["Торт Наполеон", "Napoleon cake", 65, 38, "sweets"],
+  ["Торт медовик", "Honey cake", 65, 48, "sweets"],
+  ["Эклер", "Eclair", 62, 37, "sweets"],
+  ["Тирамису", "Tiramisu", 55, 32, "sweets"],
+
+  // === НАПИТКИ (дополнение) ===
+  ["Вино красное сухое", "Red wine, dry", 44, 2, "beverages"],
+  ["Вино белое сухое", "White wine, dry", 44, 2, "beverages"],
+  ["Сидр", "Cider", 40, 5, "beverages"],
+  ["Сок томатный", "Tomato juice", 35, 4, "beverages"],
+  ["Сок морковный", "Carrot juice", 43, 9, "beverages"],
+  ["Молочный коктейль (ванильный)", "Vanilla milkshake", 37, 16, "beverages"],
+  ["Лимонад домашний", "Homemade lemonade", 55, 12, "beverages"],
+  ["Холодный чай (Ice Tea)", "Iced tea", 55, 10, "beverages"],
+
+  // === СНЕКИ (дополнение) ===
+  ["Хлебцы пшеничные (снек)", "Wheat puff snack cakes", 70, 72, "snacks"],
+  ["Гранола-батончик", "Granola bar", 58, 65, "snacks"],
+  ["Протеиновый батончик", "Protein bar", 40, 45, "snacks"],
+  ["Финиковые батончики", "Date energy ball", 50, 70, "snacks"],
+  ["Кукурузные палочки (снек)", "Corn puffs snack", 85, 80, "snacks"],
+
+  // === СУПЫ (дополнение) ===
+  ["Щи", "Shchi (cabbage soup)", 35, 4, "soups"],
+  ["Уха (рыбный суп)", "Fish soup (ukha)", 40, 4, "soups"],
+  ["Рассольник", "Rassolnik", 45, 6, "soups"],
+  ["Солянка", "Solyanka", 40, 5, "soups"],
+  ["Окрошка", "Okroshka", 35, 4, "soups"],
+  ["Гаспачо", "Gazpacho", 35, 5, "soups"],
+  ["Суп-пюре из чечевицы", "Lentil puree soup", 30, 10, "soups"],
+  ["Суп харчо", "Kharcho soup", 50, 8, "soups"],
+
+  // === ГОТОВЫЕ БЛЮДА (дополнение) ===
+  ["Вареники с картофелем", "Varenyky with potato", 65, 30, "meals"],
+  ["Вареники с творогом", "Varenyky with cottage cheese", 55, 26, "meals"],
+  ["Сырники", "Syrniki (cottage cheese pancakes)", 70, 18, "meals"],
+  ["Шаурма / донер", "Shawarma / döner kebab", 55, 28, "meals"],
+  ["Сэндвич с курицей", "Chicken sandwich", 60, 30, "meals"],
+  ["Бургер", "Burger", 65, 28, "meals"],
+  ["Хот-дог", "Hot dog", 60, 25, "meals"],
+  ["Хачапури", "Khachapuri", 65, 38, "meals"],
+  ["Манты", "Manti (dumplings)", 50, 25, "meals"],
+  ["Чебурек", "Cheburek", 65, 30, "meals"],
+  ["Жареный рис с овощами", "Fried rice with vegetables", 65, 28, "meals"],
+  ["Яичница", "Fried eggs", 48, 1, "meals"],
+  ["Омлет", "Omelette", 49, 2, "meals"],
+
+  // === СОУСЫ (дополнение) ===
+  ["Соус тартар", "Tartare sauce", 15, 5, "sauces"],
+  ["Соус ткемали", "Tkemali sauce", 40, 15, "sauces"],
+  ["Аджика", "Adjika", 40, 10, "sauces"],
+  ["Соус терияки", "Teriyaki sauce", 55, 20, "sauces"],
+  ["Соус соевый", "Soy sauce", 20, 7, "sauces"],
+  ["Соус барбекю", "BBQ sauce", 55, 30, "sauces"],
+  ["Сальса", "Salsa", 40, 6, "sauces"],
+  ["Соус песто", "Pesto sauce", 15, 5, "sauces"],
 ];
 
 // Generate final JSON
