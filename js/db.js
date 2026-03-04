@@ -30,7 +30,7 @@ const FoodDB = (() => {
   }
 
   async function loadFoods() {
-    const currentVersion = '2';
+    const currentVersion = '3';
     const storedVersion = localStorage.getItem(DATA_VERSION_KEY);
 
     if (storedVersion === currentVersion) {

@@ -332,11 +332,44 @@ const FOODS = [
   ["Майонез", "Mayonnaise", 15, 2, "sauces"],
   ["Горчица", "Mustard", 35, 5, "sauces"],
 
-  // === МЯСО И РЫБА (с углеводами) ===
+  // === ЯЙЦА ===
+  ["Яйцо варёное", "Boiled egg", 0, 1, "protein"],
+  ["Яйцо жареное", "Fried egg", 0, 1, "protein"],
+  ["Яйцо всмятку", "Soft-boiled egg", 0, 1, "protein"],
+  ["Яйца перепелиные", "Quail eggs", 0, 1, "protein"],
+
+  // === МЯСО ===
+  ["Куриная грудка (отварная)", "Chicken breast, boiled", 0, 0, "protein"],
+  ["Куриное бедро (отварное)", "Chicken thigh, boiled", 0, 0, "protein"],
+  ["Говядина отварная", "Beef, boiled", 0, 0, "protein"],
+  ["Свинина отварная", "Pork, boiled", 0, 0, "protein"],
+  ["Баранина отварная", "Lamb, boiled", 0, 0, "protein"],
+  ["Индейка отварная", "Turkey, boiled", 0, 0, "protein"],
+  ["Печень куриная", "Chicken liver", 0, 1, "protein"],
+  ["Печень говяжья", "Beef liver", 0, 4, "protein"],
   ["Рыбные палочки (панир.)", "Fish fingers", 38, 14, "protein"],
   ["Куриные наггетсы", "Chicken nuggets", 46, 16, "protein"],
   ["Сосиски", "Sausages", 28, 8, "protein"],
   ["Колбаса варёная", "Cooked sausage", 28, 2, "protein"],
+  ["Ветчина", "Ham", 0, 1, "protein"],
+  ["Бекон", "Bacon", 0, 0, "protein"],
+
+  // === РЫБА И МОРЕПРОДУКТЫ ===
+  ["Лосось (запечённый)", "Salmon, baked", 0, 0, "protein"],
+  ["Лосось (слабосолёный)", "Salmon, lightly salted", 0, 0, "protein"],
+  ["Тунец (консервированный)", "Tuna, canned", 0, 0, "protein"],
+  ["Скумбрия (запечённая)", "Mackerel, baked", 0, 0, "protein"],
+  ["Скумбрия (копчёная)", "Mackerel, smoked", 0, 0, "protein"],
+  ["Треска (отварная)", "Cod, boiled", 0, 0, "protein"],
+  ["Сельдь солёная", "Herring, salted", 0, 0, "protein"],
+  ["Минтай (отварной)", "Pollock, boiled", 0, 0, "protein"],
+  ["Карп (отварной)", "Carp, boiled", 0, 0, "protein"],
+  ["Форель (запечённая)", "Trout, baked", 0, 0, "protein"],
+  ["Креветки варёные", "Shrimp, boiled", 0, 1, "protein"],
+  ["Кальмар (отварной)", "Squid, boiled", 0, 2, "protein"],
+  ["Мидии", "Mussels", 0, 3, "protein"],
+  ["Икра красная", "Red caviar", 0, 1, "protein"],
+  ["Икра чёрная", "Black caviar", 0, 1, "protein"],
 
   // === ХЛЕБ (дополнение) ===
   ["Хлеб бородинский", "Borodinsky bread", 45, 40, "bread"],
@@ -491,6 +524,58 @@ const FOODS = [
   ["Соус барбекю", "BBQ sauce", 55, 30, "sauces"],
   ["Сальса", "Salsa", 40, 6, "sauces"],
   ["Соус песто", "Pesto sauce", 15, 5, "sauces"],
+
+  // === КОФЕ И ЧАЙ ===
+  ["Кофе чёрный", "Black coffee", 0, 0, "beverages"],
+  ["Кофе американо", "Americano coffee", 0, 0, "beverages"],
+  ["Капучино", "Cappuccino", 30, 5, "beverages"],
+  ["Кофе с сахаром", "Coffee with sugar", 55, 7, "beverages"],
+  ["Кофе 3-в-1", "Coffee 3-in-1", 65, 15, "beverages"],
+  ["Чай зелёный", "Green tea", 0, 0, "beverages"],
+  ["Чай чёрный", "Black tea", 0, 0, "beverages"],
+  ["Чай с молоком", "Tea with milk", 30, 4, "beverages"],
+  ["Какао с сахаром", "Cocoa with sugar", 55, 14, "beverages"],
+
+  // === КВАШЕНОЕ И МАРИНОВАННОЕ ===
+  ["Квашеная капуста", "Sauerkraut", 15, 3, "vegetables"],
+  ["Огурцы маринованные", "Pickled cucumbers", 15, 2, "vegetables"],
+  ["Помидоры солёные", "Salted tomatoes", 15, 3, "vegetables"],
+  ["Кимчи", "Kimchi", 15, 3, "vegetables"],
+  ["Капуста маринованная", "Marinated cabbage", 15, 4, "vegetables"],
+
+  // === СЫРЫ (дополнение) ===
+  ["Моцарелла", "Mozzarella", 0, 0, "dairy"],
+  ["Фета / брынза", "Feta / brinza", 0, 1, "dairy"],
+  ["Плавленый сыр", "Processed cheese", 35, 3, "dairy"],
+  ["Творожный сыр (крем-чиз)", "Cream cheese", 30, 4, "dairy"],
+  ["Рикотта", "Ricotta", 27, 3, "dairy"],
+  ["Пармезан", "Parmesan", 0, 0, "dairy"],
+  ["Адыгейский сыр", "Adygei cheese", 0, 0, "dairy"],
+  ["Сулугуни", "Suluguni", 0, 0, "dairy"],
+
+  // === ВЫПЕЧКА ПИРОЖКОВАЯ ===
+  ["Пирожок с капустой", "Cabbage pie / piroshok", 65, 30, "bread"],
+  ["Пирожок с картофелем", "Potato piroshok", 65, 28, "bread"],
+  ["Пирожок с мясом", "Meat piroshok", 65, 25, "bread"],
+  ["Беляш", "Belyash", 65, 22, "bread"],
+  ["Самса", "Samsa", 65, 28, "bread"],
+  ["Бублик", "Bublik (bagel-like roll)", 72, 55, "bread"],
+  ["Сушки", "Sushki (small bread rings)", 70, 68, "bread"],
+  ["Баранки", "Baranki", 70, 62, "bread"],
+  ["Пирог с ягодами", "Berry pie", 55, 38, "bread"],
+  ["Ватрушка", "Vatrushka (sweet bun)", 65, 45, "bread"],
+  ["Плюшка (сдоба)", "Sweet bun", 68, 48, "bread"],
+
+  // === АЗИАТСКАЯ КУХНЯ ===
+  ["Эдамаме", "Edamame", 30, 8, "legumes"],
+  ["Темпе", "Tempeh", 30, 9, "legumes"],
+  ["Мисо-суп", "Miso soup", 40, 4, "soups"],
+  ["Пад тай", "Pad Thai", 60, 25, "meals"],
+  ["Рамен", "Ramen", 60, 20, "meals"],
+  ["Гречневая лапша соба (варёная)", "Soba noodles, boiled", 56, 21, "pasta"],
+  ["Дим-сам / дамплинги", "Dim sum / dumplings", 55, 22, "meals"],
+  ["Карри с рисом", "Curry with rice", 65, 25, "meals"],
+  ["Вьетнамский суп фо", "Pho soup", 55, 12, "soups"],
 ];
 
 // Generate final JSON
