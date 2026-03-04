@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#f5f0e8">
+  <title>GL Трекер</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header__brand">
+        <div class="header__icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="2"/>
+            <path d="M14 6v8l5.5 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h1 class="header__title">GL Трекер</h1>
+      </div>
+      <button class="header__info-btn" id="infoBtn" aria-label="Информация">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M10 9v5M10 6.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+      <div class="search-box">
+        <svg class="search-box__icon" width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <circle cx="7.5" cy="7.5" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12 12l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-box__input"
+          placeholder="Найти продукт..."
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+        >
+        <button class="search-box__clear" id="searchClear" aria-label="Очистить">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Category pills -->
+      <div class="categories" id="categories">
+        <button class="cat-pill cat-pill--active" data-cat="all">Все</button>
+      </div>
+
+      <!-- Search Results -->
+      <div class="search-results" id="searchResults"></div>
+    </section>
+
+    <!-- Add Item Modal -->
+    <div class="modal-overlay" id="addModal">
+      <div class="modal">
+        <div class="modal__header">
+          <h3 class="modal__title" id="modalFoodName"></h3>
+          <button class="modal__close" id="modalClose" aria-label="Закрыть">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M5 5l10 10M15 5l-10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="modal__badges">
+          <span class="badge badge--gi">GI <strong id="modalGI"></strong></span>
+          <span class="badge badge--carbs">Углеводы <strong id="modalCarbs"></strong>г/100г</span>
+        </div>
+        <div class="modal__input-group">
+          <label class="modal__label" for="weightInput">Порция, г</label>
+          <div class="weight-input-row">
+            <button class="weight-btn" data-delta="-10">−10</button>
+            <input
+              type="number"
+              id="weightInput"
+              class="modal__weight-input"
+              value="100"
+              min="1"
+              max="9999"
+              inputmode="numeric"
+            >
+            <button class="weight-btn" data-delta="+10">+10</button>
+          </div>
+          <div class="weight-presets" id="weightPresets">
+            <button class="preset-btn" data-weight="50">50г</button>
+            <button class="preset-btn preset-btn--active" data-weight="100">100г</button>
+            <button class="preset-btn" data-weight="150">150г</button>
+            <button class="preset-btn" data-weight="200">200г</button>
+            <button class="preset-btn" data-weight="300">300г</button>
+          </div>
+        </div>
+        <div class="modal__gl-preview">
+          <div class="gl-preview__label">Гликемическая нагрузка</div>
+          <div class="gl-preview__value" id="modalGL">0</div>
+          <div class="gl-preview__bar">
+            <div class="gl-preview__fill" id="modalGLBar"></div>
+          </div>
+          <div class="gl-preview__scale">
+            <span>0</span><span>10</span><span>20</span><span>30+</span>
+          </div>
+        </div>
+        <button class="modal__add-btn" id="modalAddBtn">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Добавить в тарелку
+        </button>
+      </div>
+    </div>
+
+    <!-- Plate Section -->
+    <section class="plate-section" id="plateSection">
+      <div class="plate-header">
+        <h2 class="plate-header__title">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <ellipse cx="11" cy="13" rx="9" ry="5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M2 13c0-5 4-9 9-9s9 4 9 9" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          Тарелка
+          <span class="plate-count" id="plateCount">0</span>
+        </h2>
+        <button class="plate-header__clear" id="clearPlate">Очистить</button>
+      </div>
+
+      <div class="plate-items" id="plateItems">
+        <div class="plate-empty" id="plateEmpty">
+          <div class="plate-empty__icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" opacity="0.3">
+              <ellipse cx="24" cy="28" rx="18" ry="10" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M6 28c0-10 8-18 18-18s18 8 18 18" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M18 24l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+            </svg>
+          </div>
+          <p>Найдите продукт и добавьте в тарелку</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GL Summary (sticky bottom) -->
+    <div class="gl-summary" id="glSummary">
+      <div class="gl-summary__inner">
+        <div class="gl-summary__left">
+          <div class="gl-summary__label">Общая GL</div>
+          <div class="gl-summary__sub" id="glSummaryItems">0 продуктов</div>
+        </div>
+        <div class="gl-summary__value" id="glSummaryValue">0</div>
+        <div class="gl-summary__indicator" id="glSummaryIndicator"></div>
+      </div>
+      <div class="gl-summary__bar-track">
+        <div class="gl-summary__bar-fill" id="glSummaryBar"></div>
+        <div class="gl-summary__bar-marks">
+          <span style="left:0">0</span>
+          <span style="left:53.3%">80</span>
+          <span style="left:80%">120</span>
+          <span style="left:100%">150+</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Modal -->
+    <div class="modal-overlay" id="infoModal">
+      <div class="modal modal--info">
+        <div class="modal__header">
+          <h3 class="modal__title">Что такое GL?</h3>
+          <button class="modal__close" id="infoModalClose" aria-label="Закрыть">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M5 5l10 10M15 5l-10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="info-content">
+          <p><strong>Гликемическая нагрузка (GL)</strong> показывает реальное влияние еды на уровень сахара в крови.</p>
+          <div class="info-formula">GL = GI &times; углеводы в порции &divide; 100</div>
+          <h4>Шкала для одного продукта</h4>
+          <div class="info-scale">
+            <div class="info-scale__row"><span class="dot dot--low"></span> Низкая: &le; 10</div>
+            <div class="info-scale__row"><span class="dot dot--mid"></span> Средняя: 11–19</div>
+            <div class="info-scale__row"><span class="dot dot--high"></span> Высокая: &ge; 20</div>
+          </div>
+          <h4>Шкала за день</h4>
+          <div class="info-scale">
+            <div class="info-scale__row"><span class="dot dot--low"></span> Низкая: &lt; 80</div>
+            <div class="info-scale__row"><span class="dot dot--mid"></span> Средняя: 80–120</div>
+            <div class="info-scale__row"><span class="dot dot--high"></span> Высокая: &gt; 120</div>
+          </div>
+          <p class="info-note">GI — гликемический индекс (скорость усвоения углеводов). Чем ниже GI, тем медленнее поднимается сахар.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js');
+    }
+  </script>
+  <script src="js/db.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/plate.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

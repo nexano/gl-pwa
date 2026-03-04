@@ -1,0 +1,6 @@
+node_modules/
+scripts/gi_full_raw.json
+scripts/foods_en.json
+*.log
+.DS_Store
+test_*.py
